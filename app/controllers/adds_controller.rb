@@ -4,6 +4,7 @@ class AddsController < ApplicationController
   # GET /adds or /adds.json
   def index
     @adds = Add.all
+    @add = Add.new
   end
 
   # GET /adds/1 or /adds/1.json
@@ -25,7 +26,7 @@ class AddsController < ApplicationController
 
     respond_to do |format|
       if @add.save
-        format.html { redirect_to add_url(@add), notice: "Add was successfully created." }
+        format.html { redirect_to adds_url, notice: "Add was successfully created." }
         format.json { render :show, status: :created, location: @add }
       else
         format.html { render :new, status: :unprocessable_entity }

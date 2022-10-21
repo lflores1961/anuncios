@@ -2,6 +2,32 @@
 
 <h1>Adds</h1>
 
+<%= form_with(model: @add, class: "row g-3") do |form| %>
+  <% if @add.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(add.errors.count, "error") %> prohibited this add from being saved:</h2>
+
+      <ul>
+        <% add.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="col-auto">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  
+  
+    <%= form.label :description %>
+    <%= form.text_area :description, size: "40x5" %>
+  </div>
+  <div class="col-auto">
+    <%= form.button :submit, class: "btn btn-primary mb-3" %>
+  </div>
+<% end %>
+<hr>
+<h3>Listing</h3>
 <div id="adds">
   <% @adds.each do |add| %>
     <%= render add %>
@@ -11,4 +37,3 @@
   <% end %>
 </div>
 
-<%= link_to "New add", new_add_path %>
