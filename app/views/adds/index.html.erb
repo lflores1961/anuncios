@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Adds</h1>
+
+<div id="adds">
+  <% @adds.each do |add| %>
+    <%= render add %>
+    <p>
+      <%= link_to "Show this add", add %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New add", new_add_path %>
