@@ -4,9 +4,19 @@
     <%= add.title %>
   </p>
 
+   <p>
+    <strong>Published on:</strong>
+    <%=  add.created_at.to_fs(:long) %>
+  </p>
+
   <p>
     <strong>Description:</strong>
     <%= add.description %>
   </p>
 
+  <p>
+    <%= link_to "Show this add", add %>
+  </p>
+
+  <hr>
 </div>

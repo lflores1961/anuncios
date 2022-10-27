@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "faker"
+
+Add.delete_all
+
+(1..13).each do |add|
+  add_title = Faker::Lorem.sentence(word_count: 3)
+  add_description = Faker::Lorem.paragraph(sentence_count: 4)
+  seed_add = {
+    "id" => add,
+    "title" => add_title,
+    "description" => add_description
+  }
+  Add.create(seed_add)
+end
