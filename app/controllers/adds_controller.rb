@@ -3,9 +3,7 @@ class AddsController < ApplicationController
 
   # GET /adds or /adds.json
   def index
-    @pagy, @adds = pagy(Add.all)
-    #@adds = Add.paginate(page: params[:page], per_page: 10).order("created_at DESC")
-    #@add = Add.new
+    @pagy, @adds = pagy(Add.all.descending)
   end
 
   # GET /adds/1 or /adds/1.json

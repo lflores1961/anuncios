@@ -9,9 +9,9 @@ require "faker"
 
 Add.delete_all
 
-(1..13).each do |add|
-  add_title = Faker::Lorem.sentence(word_count: 3)
-  add_description = Faker::Lorem.paragraph(sentence_count: 4)
+(1..30).each do |add|
+  add_title = Faker::Lorem.sentence(word_count: 13)
+  add_description = Faker::Lorem.paragraph(sentence_count: 14)
   seed_add = {
     "id" => add,
     "title" => add_title,
