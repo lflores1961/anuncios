@@ -12,10 +12,12 @@ Add.delete_all
 (1..30).each do |add|
   add_title = Faker::Lorem.sentence(word_count: 13)
   add_description = Faker::Lorem.paragraph(sentence_count: 14)
+  add_date = Faker::Time.between(from: 30.days.ago, to: Date.today)
   seed_add = {
     "id" => add,
     "title" => add_title,
-    "description" => add_description
+    "description" => add_description,
+    "created_at" => add_date
   }
   Add.create(seed_add)
 end

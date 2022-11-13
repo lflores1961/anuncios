@@ -1,9 +1,10 @@
 class AddsController < ApplicationController
   before_action :set_add, only: %i[show edit update destroy]
+  helper_method :sort_column, :sort_direction
 
   # GET /adds or /adds.json
   def index
-    @pagy, @adds = pagy(Add.all.descending)
+    @pagy, @adds = pagy(Add.order(sort_column + " " + sort_direction))
   end
 
   # GET /adds/1 or /adds/1.json
@@ -73,5 +74,13 @@ class AddsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def add_params
     params.require(:add).permit(:title, :description)
+  end
+
+  def sort_column
+    "created_at"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end
