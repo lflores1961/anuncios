@@ -6,7 +6,12 @@
   <%= link_to "Crear Anuncio", new_add_path, class: "btn btn-primary" %>
 </div>
 <hr>
+
+
+
 <h3>Listado</h3>
+
+<%= turbo_stream_from 'adds' %>
 
 <div class="table-responsive">
   <table class="table table-striped table-bordered table-hover">
@@ -17,11 +22,8 @@
       </tr>
     </thead>
     <tbody>
-      <% @adds.each do |add| %>
-        <%= content_tag :tr, id: dom_id(add), class:  dom_class(add) do %>
-          <td><%= link_to "#{add.title}", add %></td>
-          <td><%= I18n.l(add.created_at, format: :long)%></td>
-        <% end %>
+      <%= turbo_frame_tag "adds" do %>
+        <%= render 'anuncios', locals: { adds: @adds }%>
       <% end %>
     </tbody>
   </table>

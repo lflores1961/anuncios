@@ -1,0 +1,8 @@
+<% @adds.each do |add| %>
+  <%= turbo_frame_tag dom_id(add) do %>
+    <%= content_tag :tr, id: dom_id(add), class:  dom_class(add) do %>
+      <td><%= link_to "#{add.title}", add %></td>
+      <td><%= I18n.l(add.created_at, format: :long)%></td>
+    <% end %>
+  <% end %>
+<% end %>
