@@ -27,7 +27,8 @@ class AddsController < ApplicationController
     respond_to do |format|
       if @add.save
         format.html do
-          redirect_to add_path(@add), notice: "Add was successfully created."
+          redirect_to add_path(@add),
+                      notice: "El Anuncio se ha creado correctamente."
         end
         format.json { render :show, status: :created, location: @add }
       else
@@ -42,7 +43,8 @@ class AddsController < ApplicationController
     respond_to do |format|
       if @add.update(add_params)
         format.html do
-          redirect_to add_url(@add), notice: "Add was successfully updated."
+          redirect_to add_url(@add),
+                      notice: "El Anuncio se ha actualizado correctamente."
         end
         format.json { render :show, status: :ok, location: @add }
       else
@@ -58,7 +60,8 @@ class AddsController < ApplicationController
 
     respond_to do |format|
       format.html do
-        redirect_to adds_url, notice: "Add was successfully destroyed."
+        redirect_to adds_url,
+                    notice: "El Anuncio se ha eliminado correctamente."
       end
       format.json { head :no_content }
     end
