@@ -2,10 +2,10 @@ es:
   activerecord:
     errors:
       messages:
-        record_invalid: 
+        record_invalid:
         restrict_dependent_destroy:
-          has_many: 
-          has_one: 
+          has_many:
+          has_one:
   date:
     abbr_day_names:
     - dom
@@ -16,7 +16,7 @@ es:
     - vie
     - sáb
     abbr_month_names:
-    - 
+    -
     - ene
     - feb
     - mar
@@ -42,7 +42,7 @@ es:
       long: "%d de %B de %Y"
       short: "%d de %b"
     month_names:
-    - 
+    -
     - enero
     - febrero
     - marzo
@@ -121,8 +121,8 @@ es:
       not_a_number: no es un número
       not_an_integer: debe ser un entero
       odd: debe ser impar
-      other_than: 
-      present: 
+      other_than:
+      present:
       record_invalid: 'La validación falló: %{errors}'
       taken: ya está en uso
       too_long: es demasiado largo (%{count} caracteres máximo)
@@ -131,8 +131,8 @@ es:
     template:
       body: 'Se encontraron problemas con los siguientes campos:'
       header:
-        one: No se pudo guardar este/a %{model} porque se encontró 1 error
-        other: No se pudo guardar este/a %{model} porque se encontraron %{count} errores
+        one: No se pudo guardar este/a anuncio porque se encontró 1 error
+        other: No se pudo guardar este/a Anuncio porque se encontraron errores
   helpers:
     select:
       prompt: Por favor seleccione
@@ -184,7 +184,7 @@ es:
     percentage:
       format:
         delimiter: ''
-        format: 
+        format:
     precision:
       format:
         delimiter: ''

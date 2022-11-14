@@ -27,7 +27,7 @@ class AddsController < ApplicationController
     respond_to do |format|
       if @add.save
         format.html do
-          redirect_to adds_url, notice: "Add was successfully created."
+          redirect_to add_path(@add), notice: "Add was successfully created."
         end
         format.json { render :show, status: :created, location: @add }
       else
@@ -81,6 +81,6 @@ class AddsController < ApplicationController
   end
 
   def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
   end
 end
