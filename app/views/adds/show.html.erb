@@ -12,7 +12,8 @@
       <%= link_to "Regresar al listado", adds_path, class: "btn btn-primary" %>
     </div>
     <div class="col-md-4">
-      <%= button_to "Eliminar Anuncio", @add, method: :delete, class: "btn btn-primary" %>
+      <%= link_to "Eliminar Anuncio", @add, class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: "¿Está seguro que quiere eliminar el Anuncio?" } %>
+
     </div>
   </div>
 </div>
