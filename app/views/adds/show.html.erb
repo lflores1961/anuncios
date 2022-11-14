@@ -1,10 +1,18 @@
+
 <p style="color: green"><%= notice %></p>
 
 <%= render @add %>
 
-<div>
-  <%= link_to "Edit this add", edit_add_path(@add) %> |
-  <%= link_to "Back to adds", adds_path %>
-
-  <%= button_to "Destroy this add", @add, method: :delete %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <%= link_to "Editar Anuncio", edit_add_path(@add), class: "btn btn-primary" %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to "Regresar al listado", adds_path, class: "btn btn-primary" %>
+    </div>
+    <div class="col-md-4">
+      <%= button_to "Eliminar Anuncio", @add, method: :delete, class: "btn btn-primary" %>
+    </div>
+  </div>
 </div>
